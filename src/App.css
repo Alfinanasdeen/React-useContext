@@ -1,5 +1,5 @@
 body {
-  font-family:cursive; 
+  font-family: cursive;
   font-weight: 300;
   color: #333;
   background-color: #f8f9fa;
@@ -39,6 +39,12 @@ body {
   padding: 20px;
   margin-bottom: 20px;
   transition: transform 0.3s ease-in-out;
+  display: flex; 
+  flex-direction: column;
+}
+
+.product-image {
+  flex: 1; 
 }
 
 .product-card:hover {
@@ -46,7 +52,7 @@ body {
 }
 
 .product-image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -96,4 +102,45 @@ body {
   color: #666;
   line-height: 1.5;
   margin-bottom: 15px;
+}
+@media screen and (max-width: 768px) {
+  .grand-total {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+  }
+
+  .grand-total h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .grand-total p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .container {
+    padding: 10px; 
+  }
+
+  .product-card {
+    padding: 15px; 
+  }
+
+  .add-remove button {
+    font-size: 14px; 
+    padding: 6px 12px; 
+  }
+
+  .product-info p {
+    font-size: 14px; 
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .grand-total {
+    right: 20px; 
+  }
 }
