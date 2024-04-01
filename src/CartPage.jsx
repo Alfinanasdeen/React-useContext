@@ -76,7 +76,9 @@ const CartPage = () => {
   const getProductShipping = () => {
     return "Free";
   };
-
+  const getTotalQuantity = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
   const getGrandTotal = () => {
     return cartItems.reduce(
       (total, item) => total + getProductSubtotal(item),
@@ -88,8 +90,8 @@ const CartPage = () => {
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
       <h1>Cart Page</h1>
       <div className="grand-total" style={{ marginTop: "20px" }}>
-        <h2>Grand Total</h2>
-        <p>Total: ${getGrandTotal()}</p>
+        <h2>Total Quantity: {getTotalQuantity()}</h2>
+        <h2>Total Amount: ${getGrandTotal()}</h2>
       </div>
       <div className="products-container">
         {cartItems.map((item) => (
